@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobPortal – Tech Jobs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <div class="brand">
+                <span class="brand-icon">💼</span>
+                <span>JobPortal</span>
+            </div>
+            <p class="tagline">Live tech jobs from Indeed · Coimbatore</p>
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab active" data-category="python">🐍 Python</button>
+        <button class="tab" data-category="java">☕ Java</button>
+        <button class="tab" data-category="mern">⚡ MERN Stack</button>
+    </nav>
+
+    <section class="filters">
+        <div class="filter-row">
+            <div class="filter-item">
+                <label for="fromDays">Posted within</label>
+                <select id="fromDays">
+                    <option value="1">Today</option>
+                    <option value="3" selected>Last 3 days</option>
+                    <option value="7">Last 7 days</option>
+                    <option value="14">Last 14 days</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="jobType">Job Type</label>
+                <select id="jobType">
+                    <option value="">All Types</option>
+                    <option value="fulltime">Full-time</option>
+                    <option value="parttime">Part-time</option>
+                    <option value="contract">Contract</option>
+                    <option value="internship">Internship / Fresher</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="location">Location</label>
+                <input type="text" id="location" value="Coimbatore" placeholder="City or Remote">
+            </div>
+            <button id="searchBtn" class="btn-search">Search Jobs</button>
+        </div>
+    </section>
+
+    <main>
+        <div id="result-info"></div>
+        <div id="jobs-grid"></div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
