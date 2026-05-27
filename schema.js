@@ -298,6 +298,23 @@ const userMonthlyTargetSchema = new mongoose.Schema({
 });
 userMonthlyTargetSchema.index({ username: 1, year: 1, month: 1 }, { unique: true });
 
+const jobSchema = new mongoose.Schema({
+  title: { type: String },
+  companyName: { type: String },
+  location: { type: mongoose.Schema.Types.Mixed },
+  salary: { type: mongoose.Schema.Types.Mixed },
+  jobType: [{ type: String }],
+  attributes: [{ type: String }],
+  descriptionText: { type: String },
+  applyUrl: { type: String },
+  jobUrl: { type: String },
+  postedToday: { type: Boolean, default: false },
+  age: { type: String },
+  isRemote: { type: Boolean, default: false },
+  category: { type: String, enum: ['python', 'java', 'mern'], required: true },
+  postedAt: { type: Date, default: Date.now },
+}, { timestamps: true });
+
 const User = mongoose.model("User", userSchema);
 const Chat = mongoose.model("Chat", chatSchema);
 const Trainer = mongoose.model("Trainer", trainerSchema);
@@ -307,6 +324,7 @@ const TrainerTopicFeedback = mongoose.model("TrainerTopicFeedback", trainerTopic
 const Announcement = mongoose.model("Announcement", announcementSchema);
 const Attendance = mongoose.model("Attendance", attendanceSchema);
 const UserMonthlyTarget = mongoose.model("UserMonthlyTarget", userMonthlyTargetSchema);
+const Job = mongoose.model("Job", jobSchema);
 
-module.exports = { User, Chat, Trainer, TrainerTask, TrainerTopic, TrainerTopicFeedback, Announcement, Attendance, UserMonthlyTarget };
+module.exports = { User, Chat, Trainer, TrainerTask, TrainerTopic, TrainerTopicFeedback, Announcement, Attendance, UserMonthlyTarget, Job };
 

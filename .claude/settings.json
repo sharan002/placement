@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Etherservices\\\\placement-mod\" -Recurse -Force)"
     ]
   }
 }
