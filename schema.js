@@ -312,6 +312,7 @@ const jobSchema = new mongoose.Schema({
   age: { type: String },
   isRemote: { type: Boolean, default: false },
   category: { type: String, enum: ['python', 'java', 'mern'], required: true },
+  source: { type: String, enum: ['indeed', 'linkedin'], default: 'indeed' },
   postedAt: { type: Date, default: Date.now },
 }, { timestamps: true });
 

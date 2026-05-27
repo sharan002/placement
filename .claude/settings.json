@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(npm install *)",
-      "Bash(Get-ChildItem -Path \"d:\\\\Etherservices\\\\placement-mod\" -Recurse -Force)"
+      "Bash(Get-ChildItem -Path \"d:\\\\Etherservices\\\\placement-mod\" -Recurse -Force)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Etherservices\\\\placement-mod\" -Force)",
+      "Bash(Select-Object Name, FullName)",
+      "Bash(grep -r \"apify\\\\|borderline\\\\|scraper\\\\|actor\" \"d:/Etherservices/placement-mod\" --include=\"*.js\" ! -path \"*/node_modules/*\")"
     ]
   }
 }
